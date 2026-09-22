@@ -281,6 +281,26 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- Experience Card 3 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="exp.3.date">07/2026 – 08/2026</div>
+                        <h3 class="timeline-title" data-i18n="exp.3.role">Freelance Data Analyst / BI Consultant</h3>
+                        <p class="timeline-company" data-i18n="exp.3.company">Groupe MARMOTECK, CUISINA</p>
+                        <ul class="timeline-description">
+                            <li data-i18n="exp.3.desc1">Collected, cleaned and transformed data from multiple group companies</li>
+                            <li data-i18n="exp.3.desc2">Designed a multi-company data warehouse for centralized analytics</li>
+                            <li data-i18n="exp.3.desc3">Defined and tracked KPI dashboards for merchant performance</li>
+                            <li data-i18n="exp.3.desc4">Compared commercial performance to identify trends and opportunities</li>
+                        </ul>
+                        <div class="experience-media">
+                            <button type="button" class="experience-media-trigger media-modal-trigger" data-media-slug="freelance" data-media-title-key="exp.3.role" data-i18n="experience.media.cta">See freelance captures</button>
+                            <span class="experience-media-note" data-i18n="experience.media.note">Screenshots and demo of the freelance mission</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -291,7 +311,10 @@
             <h2 class="section-title reveal" data-i18n="projects.title">Projects</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card reveal">
+                <div class="project-card reveal media-modal-trigger" role="button" tabindex="0" data-media-slug="distrisys" data-media-title-key="projects.1.title">
+                    <div class="project-media">
+                        <img src="assets/images/Distrisys-capture-1.png.png" alt="Capture du projet Distrisys" class="project-media-image" loading="lazy">
+                    </div>
                     <div class="project-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -299,19 +322,47 @@
                             <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                     </div>
-                    <h3 class="project-title" data-i18n="projects.1.title">Enterprise Data Warehouse for BBT</h3>
-                    <p class="project-description" data-i18n="projects.1.desc">Built a Big Data warehouse using PySpark, Hadoop, SQL Server. Visualized insights via interactive Power BI dashboards.</p>
+                    <h3 class="project-title" data-i18n="projects.1.title">Système décisionnel Distrisys</h3>
+                    <p class="project-description" data-i18n="projects.1.desc">Conception d’une solution BI complète basée sur une architecture Data Warehouse multidimensionnelle. Développement des processus ETL avec SSIS, création d’un cube OLAP SSAS et de rapports décisionnels avec SSRS et Excel.</p>
                     <div class="project-tags">
                         <span class="project-tag">PySpark</span>
                         <span class="project-tag">Hadoop</span>
                         <span class="project-tag">SQL Server</span>
                         <span class="project-tag">Power BI</span>
                     </div>
-                    <button class="project-overlay-btn">View Details</button>
+                    <button type="button" class="project-overlay-btn" data-i18n="projects.btn">View Details</button>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal media-modal-trigger" role="button" tabindex="0" data-media-slug="bbt" data-media-title-key="projects.4.title">
+                    <div class="project-media project-media-placeholder">
+                        <div class="project-media-placeholder-text">PFE</div>
+                        <span class="project-media-badge">Data Warehouse</span>
+                    </div>
+                    <div class="project-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 6h16v12H4z"/>
+                            <path d="M4 10h16"/>
+                            <path d="M8 6v12"/>
+                        </svg>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.4.title">Entrepôt de Données pour BBT</h3>
+                    <p class="project-description" data-i18n="projects.4.desc">Développé un entrepôt de données avancé pour l'entreprise BBT en intégrant des solutions Big Data, une ingestion via PySpark et Hadoop, une modélisation avec SQL Server et une visualisation via Power BI.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">PFE</span>
+                        <span class="project-tag">PySpark</span>
+                        <span class="project-tag">SQL Server</span>
+                        <span class="project-tag">Power BI</span>
+                    </div>
+                    <button type="button" class="project-overlay-btn" data-i18n="projects.btn">View Details</button>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card reveal">
+                <div class="project-card reveal media-modal-trigger" role="button" tabindex="0" data-media-title-key="projects.2.title">
+                    <div class="project-media project-media-placeholder">
+                        <div class="project-media-placeholder-text">TAXI</div>
+                        <span class="project-media-badge">No captures</span>
+                    </div>
                     <div class="project-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="1" y="3" width="15" height="13"/>
@@ -328,11 +379,15 @@
                         <span class="project-tag">Star Schema</span>
                         <span class="project-tag">ETL</span>
                     </div>
-                    <button class="project-overlay-btn">View Details</button>
+                    <button type="button" class="project-overlay-btn" data-i18n="projects.btn">View Details</button>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card reveal">
+                <div class="project-card reveal media-modal-trigger" role="button" tabindex="0" data-media-title-key="projects.3.title">
+                    <div class="project-media project-media-placeholder">
+                        <div class="project-media-placeholder-text">ETL</div>
+                        <span class="project-media-badge">No captures</span>
+                    </div>
                     <div class="project-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <line x1="12" y1="20" x2="12" y2="10"/>
@@ -348,11 +403,24 @@
                         <span class="project-tag">Data Viz</span>
                         <span class="project-tag">Analytics</span>
                     </div>
-                    <button class="project-overlay-btn">View Details</button>
+                    <button type="button" class="project-overlay-btn" data-i18n="projects.btn">View Details</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="media-modal" id="media-modal" aria-hidden="true">
+        <div class="media-modal-backdrop" data-modal-close></div>
+        <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="media-modal-title">
+            <button type="button" class="media-modal-close" data-modal-close aria-label="Close modal">&times;</button>
+            <div class="media-modal-header">
+                <h3 id="media-modal-title"></h3>
+                <p id="media-modal-description"></p>
+            </div>
+            <div class="media-modal-gallery" id="media-modal-gallery"></div>
+            <a class="media-modal-video-link" id="media-modal-video-link" href="#" target="_blank" rel="noopener">View video</a>
+        </div>
+    </div>
 
     <!-- ==================== EDUCATION SECTION ==================== -->
     <section class="section education" id="education">

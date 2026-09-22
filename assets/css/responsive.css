@@ -129,6 +129,22 @@
         gap: var(--space-lg);
     }
 
+    .project-media {
+        margin-bottom: var(--space-md);
+    }
+
+    .experience-media-trigger {
+        width: fit-content;
+    }
+
+    .media-modal-dialog {
+        padding: var(--space-lg);
+    }
+
+    .media-modal-gallery {
+        grid-template-columns: 1fr;
+    }
+
     /* Education section */
     .education-grid {
         grid-template-columns: 1fr;
@@ -295,6 +311,28 @@
     /* Projects section */
     .project-card {
         padding: var(--space-lg);
+    }
+
+    .project-media-play {
+        right: var(--space-sm);
+        bottom: var(--space-sm);
+    }
+
+    .media-modal-dialog {
+        padding: var(--space-md);
+    }
+
+    .media-modal-header {
+        padding-right: var(--space-2xl);
+    }
+
+    .media-modal-header h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    .media-modal-video-link {
+        width: 100%;
+        justify-content: center;
     }
 
     .project-icon {

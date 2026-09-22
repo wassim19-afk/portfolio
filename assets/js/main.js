@@ -13,6 +13,88 @@ const navbarMenu = document.getElementById('navbar-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const backToTopBtn = document.getElementById('back-to-top');
 const contactForm = document.getElementById('contact-form');
+const mediaModal = document.getElementById('media-modal');
+const mediaModalTitle = document.getElementById('media-modal-title');
+const mediaModalDescription = document.getElementById('media-modal-description');
+const mediaModalGallery = document.getElementById('media-modal-gallery');
+const mediaModalVideoLink = document.getElementById('media-modal-video-link');
+
+function getCurrentLanguage() {
+    return document.documentElement.lang === 'fr' ? 'fr' : 'en';
+}
+
+function getLocalizedText(enText, frText) {
+    return getCurrentLanguage() === 'fr' ? frText : enText;
+}
+
+function normalizeText(value) {
+    return value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '')
+        .trim();
+}
+
+function getAssetBaseName(path) {
+    const fileName = path.split('/').pop() || '';
+    return fileName.replace(/\.[^.]+$/, '').toLowerCase();
+}
+
+function getTitleKey(trigger) {
+    const titleKey = trigger.dataset.mediaTitleKey || trigger.closest('[data-media-title-key]')?.dataset.mediaTitleKey || '';
+    return titleKey && window.translations?.[getCurrentLanguage()]?.[titleKey]
+        ? window.translations[getCurrentLanguage()][titleKey]
+        : '';
+}
+
+function collectProjectImages(trigger) {
+    const slug = normalizeText(trigger.dataset.mediaSlug || '');
+    const titleText = normalizeText(getTitleKey(trigger));
+    const target = `${slug}${titleText}`;
+
+    const imageGroups = [
+        {
+            keys: ['distrisys', 'decisionsupportsystemdistrisys', 'systemedecisionneldistrisys'],
+            files: [
+                'Distrisys-capture-1.png.png',
+                'Distrisys-capture-2.png.png',
+                'Distrisys-capture-3.png.png',
+                'Distrisys-capture-4.png.png'
+            ]
+        },
+        {
+            keys: ['freelance', 'marmoteck', 'cuisina'],
+            files: [
+                'freelance-capture-1.png.png',
+                'freelance-capture-2.png.png',
+                'freelance-capture-3.png.png',
+                'freelance-capture-4.png.png',
+                'freelance-capture-5.png.png',
+                'freelance-capture-6.png.png'
+            ]
+        },
+        {
+            keys: ['bbt', 'pfe', 'datawarehouse'],
+            files: [
+                'project-PFE-1.png.png',
+                'project-PFE-2.png.png',
+                'project-PFE-3.png.png',
+                'project-PFE-4.png.png',
+                'project-PFE-5.png.png',
+                'project-PFE-6.png.png',
+                'project-PFE-7.png.png',
+                'project-PFE-8.png.png',
+                'project-PFE-9.png.png',
+                'project-PFE-10.png.png'
+            ]
+        }
+    ];
+
+    const matchingGroup = imageGroups.find(group => group.keys.some(key => target.includes(key)));
+
+    return matchingGroup ? matchingGroup.files.map(fileName => `assets/images/${fileName}`) : [];
+}
 
 // ============================================
 // NAVBAR FUNCTIONALITY
@@ -127,6 +209,116 @@ function scrollToTop() {
 }
 
 // ============================================
+// MEDIA MODAL
+// ============================================
+
+function closeMediaModal() {
+    if (!mediaModal) return;
+
+    mediaModal.classList.remove('open');
+    mediaModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+function renderMediaGallery(mediaSources, title) {
+    if (!mediaModalGallery) return;
+
+    mediaModalGallery.innerHTML = '';
+
+    if (!mediaSources.length) {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'media-modal-placeholder';
+        placeholder.textContent = getLocalizedText('No captures available yet', 'Aucune capture disponible pour le moment');
+        mediaModalGallery.appendChild(placeholder);
+        return;
+    }
+
+    mediaSources.forEach((source, index) => {
+        const frame = document.createElement('div');
+        frame.className = 'media-modal-frame';
+
+        const image = document.createElement('img');
+        image.src = source;
+        image.alt = `${title} - capture ${index + 1}`;
+        image.loading = 'lazy';
+        image.addEventListener('error', () => {
+            frame.innerHTML = '';
+            const fallback = document.createElement('div');
+            fallback.className = 'media-modal-placeholder';
+            fallback.textContent = source;
+            frame.appendChild(fallback);
+        });
+
+        frame.appendChild(image);
+        mediaModalGallery.appendChild(frame);
+    });
+}
+
+function openMediaModal(trigger) {
+    if (!mediaModal || !mediaModalTitle || !mediaModalDescription || !mediaModalGallery || !mediaModalVideoLink) {
+        return;
+    }
+
+    const mediaContainer = trigger.closest('.project-card, .timeline-item, .experience-media');
+    const mediaSources = (trigger.dataset.mediaImages || mediaContainer?.dataset.mediaImages || '')
+        .split('|')
+        .map(source => source.trim())
+        .filter(Boolean)
+        .concat(collectProjectImages(trigger))
+        .filter((source, index, array) => array.indexOf(source) === index);
+    const mediaVideo = trigger.dataset.mediaVideo || mediaContainer?.dataset.mediaVideo || '';
+
+    let title = '';
+    let description = '';
+
+    if (mediaContainer?.classList.contains('project-card')) {
+        title = mediaContainer.querySelector('.project-title')?.textContent?.trim() || '';
+        description = mediaContainer.querySelector('.project-description')?.textContent?.trim() || '';
+        const projectTags = Array.from(mediaContainer.querySelectorAll('.project-tag'))
+            .map(tag => tag.textContent.trim())
+            .filter(Boolean);
+        if (projectTags.length) {
+            description = description ? `${description} · ${projectTags.join(', ')}` : projectTags.join(', ');
+        }
+    } else if (mediaContainer?.classList.contains('timeline-item')) {
+        title = mediaContainer.querySelector('.timeline-title')?.textContent?.trim() || '';
+        const company = mediaContainer.querySelector('.timeline-company')?.textContent?.trim() || '';
+        const bulletPoints = Array.from(mediaContainer.querySelectorAll('.timeline-description li'))
+            .map(item => item.textContent.trim())
+            .filter(Boolean);
+        description = [company, ...bulletPoints].filter(Boolean).join(' · ');
+    } else {
+        title = trigger.dataset.mediaTitle || trigger.closest('[data-media-title]')?.dataset.mediaTitle || '';
+        description = trigger.dataset.mediaDescription || trigger.closest('[data-media-description]')?.dataset.mediaDescription || '';
+    }
+
+    if (!mediaSources.length && mediaContainer?.classList.contains('project-card')) {
+        mediaSources.push(...collectProjectImages(trigger));
+    }
+
+    mediaModalTitle.textContent = title;
+    mediaModalDescription.textContent = description;
+    renderMediaGallery(mediaSources, title);
+
+    if (mediaVideo) {
+        mediaModalVideoLink.style.display = 'inline-flex';
+        mediaModalVideoLink.href = mediaVideo;
+        mediaModalVideoLink.textContent = getLocalizedText('View video', 'Voir la vidéo');
+    } else {
+        mediaModalVideoLink.style.display = 'none';
+    }
+
+    mediaModal.classList.add('open');
+    mediaModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function handleMediaTrigger(event) {
+    event.preventDefault();
+    openMediaModal(event.currentTarget);
+}
+
+// ============================================
 // CONTACT FORM
 // ============================================
 
@@ -200,6 +392,32 @@ function init() {
     // Back to top button
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', scrollToTop);
+    }
+
+    // Media modal triggers
+    const mediaTriggers = document.querySelectorAll('.media-modal-trigger');
+    mediaTriggers.forEach(trigger => {
+        trigger.addEventListener('click', handleMediaTrigger);
+        trigger.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openMediaModal(trigger);
+            }
+        });
+    });
+
+    if (mediaModal) {
+        mediaModal.addEventListener('click', (event) => {
+            if (event.target.matches('[data-modal-close]')) {
+                closeMediaModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMediaModal();
+            }
+        });
     }
     
     // Contact form submission

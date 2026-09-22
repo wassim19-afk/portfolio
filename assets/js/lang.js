@@ -60,16 +60,31 @@ const translations = {
         "exp.2.desc2": "Processed data from multiple sources",
         "exp.2.desc3": "Structured data for business intelligence use",
         "exp.2.desc4": "Automated analytical data flows",
+        "exp.3.date": "07/2026 – 08/2026",
+        "exp.3.role": "Freelance Data Analyst / BI Consultant",
+        "exp.3.company": "Groupe MARMOTECK, CUISINA",
+        "exp.3.desc1": "Collected, cleaned and transformed data from multiple group companies",
+        "exp.3.desc2": "Designed a multi-company data warehouse for centralized analytics",
+        "exp.3.desc3": "Defined and tracked KPI dashboards for merchant performance",
+        "exp.3.desc4": "Compared commercial performance to identify trends and opportunities",
 
         // Projects
         "projects.title": "Projects",
-        "projects.1.title": "Enterprise Data Warehouse for BBT",
-        "projects.1.desc": "Built a Big Data warehouse using PySpark, Hadoop, SQL Server. Visualized insights via interactive Power BI dashboards.",
-        "projects.2.title": "NYC Yellow Taxi Trips Analysis",
-        "projects.2.desc": "Full BI solution on NYC taxi dataset. ETL with Talend Open Studio, star schema modeling. Power BI dashboards: peak hours, revenue, zones, payment methods.",
-        "projects.3.title": "Sales ETL Pipeline & Analysis",
-        "projects.3.desc": "Automated Python ETL pipeline for commercial data. KPIs: basket value, conversion rate, repurchase rate. Interactive visuals feeding an analytics dashboard.",
+        "projects.1.title": "Decision Support System Distrisys",
+        "projects.1.desc": "Designed a full BI solution based on a multidimensional Data Warehouse architecture. Built ETL processes with SSIS, created an SSAS OLAP cube, and produced decision reports with SSRS and Excel.",
+        "projects.2.title": "New York Yellow Taxi Trips Analysis",
+        "projects.2.desc": "Built a BI solution for NYC Yellow Taxi Trips. Performed ETL with Talend Open Studio, star-schema modeling, and dashboard analysis of peak periods, revenue, payment methods, and activity zones.",
+        "projects.3.title": "ETL Pipeline and Sales Analysis",
+        "projects.3.desc": "Developed an automated Python ETL pipeline for commercial data analysis. Defined KPIs such as basket value, conversion rate, and repurchase rate for analytical dashboards.",
+        "projects.4.title": "Data Warehouse for BBT",
+        "projects.4.desc": "Developed an advanced data warehouse for BBT by integrating Big Data solutions. Ingested raw data with PySpark and Hadoop, modeled it with SQL Server, and visualized it with Power BI dashboards.",
         "projects.btn": "View Details",
+
+        // Media
+        "experience.media.cta": "See freelance captures",
+        "experience.media.note": "Screenshots and demo of the freelance mission",
+        "media.modal.video": "View video",
+        "media.modal.empty": "No captures available yet",
 
         // Education
         "edu.title": "Education",
@@ -145,16 +160,31 @@ const translations = {
         "exp.2.desc2": "Traitement de données provenant de multiples sources",
         "exp.2.desc3": "Structuration des données pour l'utilisation en BI",
         "exp.2.desc4": "Automatisation des flux de données analytiques",
+        "exp.3.date": "07/2026 – 08/2026",
+        "exp.3.role": "Analyste de Données Freelance / Consultant BI",
+        "exp.3.company": "Groupe MARMOTECK, CUISINA",
+        "exp.3.desc1": "Collecte, nettoyage et transformation des données de plusieurs sociétés du groupe",
+        "exp.3.desc2": "Conception d'un entrepôt de données multisociétés pour centraliser les analyses",
+        "exp.3.desc3": "Définition et suivi de tableaux de bord KPI pour la performance des commerçants",
+        "exp.3.desc4": "Analyse comparative des performances commerciales pour identifier les tendances et opportunités",
 
         // Projects
         "projects.title": "Projets",
-        "projects.1.title": "Entrepôt de Données Entreprise pour BBT",
-        "projects.1.desc": "Construction d'un entrepôt Big Data avec PySpark, Hadoop, SQL Server. Visualisation des insights via des tableaux de bord Power BI interactifs.",
-        "projects.2.title": "Analyse des Trajets Taxi NYC",
-        "projects.2.desc": "Solution BI complète sur le dataset taxi NYC. ETL avec Talend Open Studio, modélisation en étoile. Tableaux de bord Power BI : heures de pointe, revenus, zones, modes de paiement.",
-        "projects.3.title": "Pipeline ETL & Analyse des Ventes",
-        "projects.3.desc": "Pipeline ETL Python automatisé pour données commerciales. KPIs : panier moyen, taux de conversion, taux de rachat. Visuels interactifs alimentant un tableau de bord analytique.",
+        "projects.1.title": "Système décisionnel Distrisys",
+        "projects.1.desc": "Conception d’une solution BI complète basée sur une architecture Data Warehouse multidimensionnelle. Développement des processus ETL avec SSIS, création d’un cube OLAP SSAS et de rapports décisionnels avec SSRS et Excel.",
+        "projects.2.title": "Analyse des trajets Yellow Taxi à New York",
+        "projects.2.desc": "Développé une solution BI complète basée sur le dataset des taxis jaunes à New York. Réalisé l'ETL avec Talend Open Studio, la modélisation en étoile et l'analyse des pics, revenus, modes de paiement et zones d'activité.",
+        "projects.3.title": "Pipeline ETL et analyse des ventes",
+        "projects.3.desc": "Développé un pipeline automatisé de traitement de données commerciales avec Python. Mis en place des indicateurs clés comme la valeur panier, le taux de conversion et le taux de réachat pour les tableaux de bord analytiques.",
+        "projects.4.title": "Entrepôt de Données pour BBT",
+        "projects.4.desc": "Développé un entrepôt de données avancé pour BBT en intégrant des solutions Big Data. Ingestion des données brutes avec PySpark et Hadoop, modélisation avec SQL Server et visualisation via Power BI.",
         "projects.btn": "Voir Détails",
+
+        // Media
+        "experience.media.cta": "Voir les captures freelance",
+        "experience.media.note": "Captures d'écran et démonstration de la mission freelance",
+        "media.modal.video": "Voir la vidéo",
+        "media.modal.empty": "Aucune capture disponible pour le moment",
 
         // Education
         "edu.title": "Formation",
@@ -178,6 +208,8 @@ const translations = {
         "footer.text": "© 2026 Mohamed Wassim Garali — Construit avec passion & données"
     }
 };
+
+window.translations = translations;
 
 // ============================================
 // STATE
