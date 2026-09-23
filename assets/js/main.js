@@ -64,6 +64,20 @@ function collectProjectImages(trigger) {
             ]
         },
         {
+            keys: ['b2mai', 'b2mdeveloper', 'b2maideveloper'],
+            files: [
+                'Distrisys-capture-1.png.png',
+                'Distrisys-capture-2.png.png'
+            ]
+        },
+        {
+            keys: ['b2mdatadevelopment', 'b2mdataengineering', 'dataengineeringintern'],
+            files: [
+                'Distrisys-capture-3.png.png',
+                'Distrisys-capture-4.png.png'
+            ]
+        },
+        {
             keys: ['freelance', 'marmoteck', 'cuisina'],
             files: [
                 'freelance-capture-1.png.png',
@@ -75,7 +89,7 @@ function collectProjectImages(trigger) {
             ]
         },
         {
-            keys: ['bbt', 'pfe', 'datawarehouse'],
+            keys: ['bbt', 'projectbbt', 'datawarehouseforbbt'],
             files: [
                 'project-PFE-1.png.png',
                 'project-PFE-2.png.png',
@@ -88,6 +102,14 @@ function collectProjectImages(trigger) {
                 'project-PFE-9.png.png',
                 'project-PFE-10.png.png'
             ]
+        },
+        {
+            keys: ['yellowtaxi', 'newyorkyellowtaxi', 'nycyellowtaxi'],
+            files: []
+        },
+        {
+            keys: ['salesetl', 'salesanalysis'],
+            files: []
         }
     ];
 
