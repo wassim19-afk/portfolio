@@ -64,32 +64,7 @@ function collectProjectImages(trigger) {
             ]
         },
         {
-            keys: ['b2mai', 'b2mdeveloper', 'b2maideveloper'],
-            files: [
-                'Distrisys-capture-1.png.png',
-                'Distrisys-capture-2.png.png'
-            ]
-        },
-        {
-            keys: ['b2mdatadevelopment', 'b2mdataengineering', 'dataengineeringintern'],
-            files: [
-                'Distrisys-capture-3.png.png',
-                'Distrisys-capture-4.png.png'
-            ]
-        },
-        {
-            keys: ['freelance', 'marmoteck', 'cuisina'],
-            files: [
-                'freelance-capture-1.png.png',
-                'freelance-capture-2.png.png',
-                'freelance-capture-3.png.png',
-                'freelance-capture-4.png.png',
-                'freelance-capture-5.png.png',
-                'freelance-capture-6.png.png'
-            ]
-        },
-        {
-            keys: ['bbt', 'projectbbt', 'datawarehouseforbbt'],
+            keys: ['pfe', 'b2mai', 'b2mdeveloper', 'b2maideveloper', 'b2maipfe'],
             files: [
                 'project-PFE-1.png.png',
                 'project-PFE-2.png.png',
@@ -104,7 +79,22 @@ function collectProjectImages(trigger) {
             ]
         },
         {
+            keys: ['freelance', 'marmoteck', 'cuisina'],
+            files: [
+                'freelance-capture-1.png.png',
+                'freelance-capture-2.png.png',
+                'freelance-capture-3.png.png',
+                'freelance-capture-4.png.png',
+                'freelance-capture-5.png.png',
+                'freelance-capture-6.png.png'
+            ]
+        },
+        {
             keys: ['yellowtaxi', 'newyorkyellowtaxi', 'nycyellowtaxi'],
+            files: []
+        },
+        {
+            keys: ['bbt', 'projectbbt', 'datawarehouseforbbt'],
             files: []
         },
         {

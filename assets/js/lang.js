@@ -74,10 +74,10 @@ const translations = {
         "projects.1.desc": "Designed a full BI solution based on a multidimensional Data Warehouse architecture. Built ETL processes with SSIS, created an SSAS OLAP cube, and produced decision reports with SSRS and Excel.",
         "projects.2.title": "New York Yellow Taxi Trips Analysis",
         "projects.2.desc": "Built a BI solution for NYC Yellow Taxi Trips. Performed ETL with Talend Open Studio, star-schema modeling, and dashboard analysis of peak periods, revenue, payment methods, and activity zones.",
-        "projects.3.title": "ETL Pipeline and Sales Analysis",
-        "projects.3.desc": "Developed an automated Python ETL pipeline for commercial data analysis. Defined KPIs such as basket value, conversion rate, and repurchase rate for analytical dashboards.",
-        "projects.4.title": "Data Warehouse for BBT",
-        "projects.4.desc": "Developed an advanced data warehouse for BBT by integrating Big Data solutions. Ingested raw data with PySpark and Hadoop, modeled it with SQL Server, and visualized it with Power BI dashboards.",
+        "projects.3.title": "Data Warehouse for BBT",
+        "projects.3.desc": "Developed an advanced data warehouse for BBT by integrating Big Data solutions. Ingested raw data with PySpark and Hadoop, modeled it with SQL Server, and visualized it with Power BI dashboards.",
+        "projects.4.title": "ETL Pipeline and Sales Analysis",
+        "projects.4.desc": "Developed an automated Python ETL pipeline for commercial data analysis. Defined KPIs such as basket value, conversion rate, and repurchase rate for analytical dashboards.",
         "projects.btn": "View Details",
 
         // Media
@@ -174,10 +174,10 @@ const translations = {
         "projects.1.desc": "Conception d’une solution BI complète basée sur une architecture Data Warehouse multidimensionnelle. Développement des processus ETL avec SSIS, création d’un cube OLAP SSAS et de rapports décisionnels avec SSRS et Excel.",
         "projects.2.title": "Analyse des trajets Yellow Taxi à New York",
         "projects.2.desc": "Développé une solution BI complète basée sur le dataset des taxis jaunes à New York. Réalisé l'ETL avec Talend Open Studio, la modélisation en étoile et l'analyse des pics, revenus, modes de paiement et zones d'activité.",
-        "projects.3.title": "Pipeline ETL et analyse des ventes",
-        "projects.3.desc": "Développé un pipeline automatisé de traitement de données commerciales avec Python. Mis en place des indicateurs clés comme la valeur panier, le taux de conversion et le taux de réachat pour les tableaux de bord analytiques.",
-        "projects.4.title": "Entrepôt de Données pour BBT",
-        "projects.4.desc": "Développé un entrepôt de données avancé pour BBT en intégrant des solutions Big Data. Ingestion des données brutes avec PySpark et Hadoop, modélisation avec SQL Server et visualisation via Power BI.",
+        "projects.3.title": "Entrepôt de Données pour BBT",
+        "projects.3.desc": "Développé un entrepôt de données avancé pour BBT en intégrant des solutions Big Data. Ingestion des données brutes avec PySpark et Hadoop, modélisation avec SQL Server et visualisation via Power BI.",
+        "projects.4.title": "Pipeline ETL et analyse des ventes",
+        "projects.4.desc": "Développé un pipeline automatisé de traitement de données commerciales avec Python. Mis en place des indicateurs clés comme la valeur panier, le taux de conversion et le taux de réachat pour les tableaux de bord analytiques.",
         "projects.btn": "Voir Détails",
 
         // Media
