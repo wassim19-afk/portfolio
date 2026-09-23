@@ -82,7 +82,7 @@ const translations = {
 
         // Media
         "experience.media.cta": "See captures",
-        "experience.media.note": "Screenshots and demo of the freelance mission",
+        "experience.media.note": "Screenshots and demo of the mission",
         "media.modal.video": "View video",
         "media.modal.empty": "No captures available yet",
 
@@ -182,7 +182,7 @@ const translations = {
 
         // Media
         "experience.media.cta": "Voir les captures",
-        "experience.media.note": "Captures d'écran et démonstration de la mission freelance",
+        "experience.media.note": "Captures d'écran et démonstration de la mission",
         "media.modal.video": "Voir la vidéo",
         "media.modal.empty": "Aucune capture disponible pour le moment",
 
